@@ -1,0 +1,24 @@
+{
+  "name": "sandrine-website",
+  "version": "1.0.0",
+  "description": "sandrinefontanel.com website",
+  "author": "Pierre Bondoerffer <pierre@bondoer.fr>",
+  "license": "All rights reserved",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "yarn clean && parcel build src/index.html && cp CNAME ./dist",
+    "prettier": "prettier --write src",
+    "clean": "rm -rf dist .parcel-cache",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "release": "sh release.sh"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.0.8"
+  },
+  "browserslist": "> 0.5%, not dead"
+}
